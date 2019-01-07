@@ -4,9 +4,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource       # 配置当前要使用的数据源的操作类型
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://10.168.12.38:3306/nls_business?characterEncoding=utf-8
-    username: nls
-    password: nls
+    url: jdbc:mysql://10.168.12.38:3306/msg_db?characterEncoding=utf-8
+    username: uaf_m
+    password: UAF_msg201801
     dbcp2:
       validation-query: "SELECT 1"         # 数据库连接验证
       min-idle: 5                                      # 数据库连接池的最小维持连接数
@@ -16,7 +16,7 @@ spring:
       validation-query-timeout: 10                     # 确认连接有效SQL的执行查询超时时间（秒）
       test-while-idle: true                            # 假如一个对象验证失败，则对象将被从池中释放
 mybatis:
-  type-aliases-package: com.noodles.springbootmybatis.bean
+  type-aliases-package: com.noodles.collectdata.vo
   mapper-locations: classpath:mapper/*Mapper.xml
   configuration:
     map-underscore-to-camel-case: true
