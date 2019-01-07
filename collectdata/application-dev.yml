@@ -1,2 +1,33 @@
 server:
-  port: 8100
+  port: 8584
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource       # 配置当前要使用的数据源的操作类型
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.168.12.38:3306/nls_business?characterEncoding=utf-8
+    username: nls
+    password: nls
+    dbcp2:
+      validation-query: "SELECT 1"         # 数据库连接验证
+      min-idle: 5                                      # 数据库连接池的最小维持连接数
+      initial-size: 5                                  # 初始化提供的连接数
+      max-total: 10                                    # 最大的连接数
+      max-wait-millis: 200                             # 等待连接获取的最大超时时间(毫秒)
+      validation-query-timeout: 10                     # 确认连接有效SQL的执行查询超时时间（秒）
+      test-while-idle: true                            # 假如一个对象验证失败，则对象将被从池中释放
+mybatis:
+  type-aliases-package: com.noodles.springbootmybatis.bean
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+mapper:
+  i-d-e-n-t-i-t-y: MYSQL
+  mappers: tk.mybatis.mapper.common.BaseMapper
+  not-empty: true  #设置 insert 和 update 中，是否判断字符串类型!=''
+  enum-as-simple-type: true  # 枚举按简单类型处理
+#分页插件
+pagehelper:
+  helper-dialect: mysql
+  params: count=countsql
+  reasonable: false
+  support-methods-arguments: true
