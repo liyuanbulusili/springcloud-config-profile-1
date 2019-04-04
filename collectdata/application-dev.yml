@@ -4,9 +4,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource       # 配置当前要使用的数据源的操作类型
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://10.168.12.38:3306/msg_db?characterEncoding=utf-8
-    username: uaf_m
-    password: UAF_msg201801
+    url: jdbc:mysql://192.168.153.200:3306/mall?characterEncoding=utf-8
+    username: root
+    password: 123456
     dbcp2:
       validation-query: "SELECT 1"         # 数据库连接验证
       min-idle: 5                                      # 数据库连接池的最小维持连接数
